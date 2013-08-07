@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  golfer1: MyString
+  golfer2: MyString
+  course: MyString
+  score: 1
+  winner: MyString
+
+two:
+  name: MyString
+  golfer1: MyString
+  golfer2: MyString
+  course: MyString
+  score: 1
+  winner: MyString

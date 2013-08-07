@@ -29,9 +29,18 @@
   <strong>Rating:</strong>
   <%= @course.rating %>
 </p>
+<!-- Hole Listing -->
+<h3>Holes</h3>
+<table><tr><td>#</td><td>Par</td><td>Hcap</td><td>Yard</td></tr></table>
+<% @course.holes.each do |c| %>
+<table border="1"><tr><td><%= c.hole_number %></td>
+<td><%= c.par %></td><td><%= c.handicap %></td><td><%= c.yardage %></tr>
+
+</table>
+<% end %>
+
 
 <!-- New hole form -->
-
 <h3>Add a hole:</h3>
 
 <%= form_for([@course, @course.holes.build]) do |f| %>

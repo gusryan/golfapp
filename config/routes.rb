@@ -1,4 +1,6 @@
 Scorematch::Application.routes.draw do
+  resources :matches
+
 resources :golfers
 
 resources :courses do

@@ -6,7 +6,7 @@ class HolesController < ApplicationController
 @course = Course.find(params[:course_id])
  
 # Here we create a new hole based on the course data from our form (params[:hole])
-@hole = @course.holes.create(params[:hole])
+@hole = @course.holes.create(hole_params)
  
 # Once the course is saved, we redirect the user back to the course they were viewing
 redirect_to course_path(@course)

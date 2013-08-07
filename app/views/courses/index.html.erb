@@ -9,8 +9,7 @@
       <th>Tees</th>
       <th>Slope</th>
       <th>Rating</th>
-      <th></th>
-      <th></th>
+      <th>Holes</th>
       <th></th>
     </tr>
   </thead>
@@ -24,8 +23,10 @@
         <td><%= course.tees %></td>
         <td><%= course.slope %></td>
         <td><%= course.rating %></td>
+	<td><%= course.holes.count %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
+	<td><%= link_to 'Detroy', course, method: :delete, date: {confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

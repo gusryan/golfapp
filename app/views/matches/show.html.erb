@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @match.name %></h2>
+</p>
+
+<p>
+  <strong>Golfer 1:</strong>
+  <%= @match.golfer1 %>
+</p>
+
+<p>
+  <strong>Golfer 2:</strong>
+  <%= @match.golfer2 %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @match.course %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @match.score %>
+</p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @match.winner %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>
