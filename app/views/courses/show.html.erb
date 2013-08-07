@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Par:</strong>
+  <%= @course.par %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location %>
+</p>
+
+<p>
+  <strong>Tees:</strong>
+  <%= @course.tees %>
+</p>
+
+<p>
+  <strong>Slope:</strong>
+  <%= @course.slope %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @course.rating %>
+</p>
+
+<!-- New hole form -->
+
+<h3>Add a hole:</h3>
+
+<%= form_for([@course, @course.holes.build]) do |f| %>
+<div class="field">
+<%= f.label :hole_number %><br />
+<%= f.text_field :hole_number %>
+</div>
+<div class="field">
+<%= f.label :par %><br />
+<%= f.text_field :par %>
+</div>
+<div class="field">
+<%= f.label :handicap %><br />
+<%= f.text_field :handicap %>
+</div>
+<div class="field">
+<%= f.label :yardage %><br />
+<%= f.text_field :yardage %>
+</div>
+<div class="actions">
+<%= f.submit %>
+</div>
+
+<% end %>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

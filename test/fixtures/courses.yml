@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  par: 1
+  location: MyText
+  tees: MyString
+  slope: 1
+  rating: 1
+
+two:
+  name: MyString
+  par: 1
+  location: MyText
+  tees: MyString
+  slope: 1
+  rating: 1

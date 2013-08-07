@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hole_number: 1
+  par: 1
+  handicap: 1
+  yardage: 1
+  course_id: 
+
+two:
+  hole_number: 1
+  par: 1
+  handicap: 1
+  yardage: 1
+  course_id: 

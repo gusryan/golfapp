@@ -1,0 +1,36 @@
+<h1>Course Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Par</th>
+      <th>Location</th>
+      <th>Tees</th>
+      <th>Slope</th>
+      <th>Rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.par %></td>
+        <td><%= course.location %></td>
+        <td><%= course.tees %></td>
+        <td><%= course.slope %></td>
+        <td><%= course.rating %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>
