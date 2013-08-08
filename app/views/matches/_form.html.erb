@@ -17,17 +17,21 @@
   </div>
   <div class="field">
     <%= f.label 'Golfer 1' %><br>
-    <%= collection_select(:match, :id, Golfer.all, :id, :name) %>  
+    <%= collection_select(:match, :golfer1, Golfer.all, :id, :name) %>
 </div>
   <div class="field">
     <%= f.label 'Golfer 2' %><br>
-    <%= collection_select(:match, :id, Golfer.all, :id, :name) %>
+   <%= collection_select(:match, :golfer2, Golfer.all, :id, :name) %>
 </div>
-<div class="field">
-    <%= f.label :course %><br>
-    <%= collection_select(:match, :id, Course.all, :id, :name) %>
+  <div class="field">
+    <%= f.label 'Course' %><br>
+    <%= collection_select(:match, :course_id, Course.all, :id, :name) %>  
 </div>
-<p>  <div class="actions">
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.number_field :score %>
+  </div>
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

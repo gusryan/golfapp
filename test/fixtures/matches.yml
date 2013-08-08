@@ -2,16 +2,24 @@
 
 one:
   name: MyString
-  golfer1: MyString
-  golfer2: MyString
-  course: MyString
+  golfer1_name: MyString
+  golfer2_name: MyString
+  course_name: MyString
   score: 1
   winner: MyString
+  course_id: 
+  golfer_id: 
+  golfer1_id: 
+  golfer2_id: 
 
 two:
   name: MyString
-  golfer1: MyString
-  golfer2: MyString
-  course: MyString
+  golfer1_name: MyString
+  golfer2_name: MyString
+  course_name: MyString
   score: 1
   winner: MyString
+  course_id: 
+  golfer_id: 
+  golfer1_id: 
+  golfer2_id: 
