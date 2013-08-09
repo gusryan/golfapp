@@ -9,8 +9,6 @@ one:
   winner: MyString
   course_id: 
   golfer_id: 
-  golfer1_id: 
-  golfer2_id: 
 
 two:
   name: MyString
@@ -21,5 +19,3 @@ two:
   winner: MyString
   course_id: 
   golfer_id: 
-  golfer1_id: 
-  golfer2_id: 

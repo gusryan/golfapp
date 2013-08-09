@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2><%= @match.name %></h2>
+  <strong>Name:</strong>
+  <%= @match.name %>
 </p>
 
 <p>
   <strong>Golfer 1:</strong>
-  <%= @match.golfer1_id %>
+  <%= @match.golfer.name %>
 </p>
 
 <p>
   <strong>Golfer 2:</strong>
-  <%= @match.golfer2_id %>
+  <%= @match.golfer.name %>
 </p>
 
 <p>
-  <strong>Course name:</strong>
+  <strong>Course:</strong>
   <%= @match.course.name %>
 </p>
 

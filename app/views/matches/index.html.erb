@@ -1,4 +1,4 @@
-<h2>Match Listing</h2>
+<h1>Listing matches</h1>
 
 <table>
   <thead>
@@ -16,8 +16,8 @@
     <% @matches.each do |match| %>
       <tr>
         <td><%= match.name %></td>
-        <td><%= match.golfer1_id %></td>
-        <td><%= match.golfer2_id %></td>
+        <td><%= match.golfer_id %></td>
+        <td><%= match.golfer2_name %></td>
         <td><%= match.course.name %></td>
         <td><%= match.score %></td>
         <td><%= match.winner %></td>

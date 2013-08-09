@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808034120) do
+ActiveRecord::Schema.define(version: 20130809132927) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -52,15 +52,11 @@ ActiveRecord::Schema.define(version: 20130808034120) do
     t.string   "winner"
     t.integer  "course_id"
     t.integer  "golfer_id"
-    t.integer  "golfer1_id"
-    t.integer  "golfer2_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "matches", ["course_id"], name: "index_matches_on_course_id"
-  add_index "matches", ["golfer1_id"], name: "index_matches_on_golfer1_id"
-  add_index "matches", ["golfer2_id"], name: "index_matches_on_golfer2_id"
   add_index "matches", ["golfer_id"], name: "index_matches_on_golfer_id"
 
 end
