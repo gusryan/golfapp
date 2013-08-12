@@ -6,13 +6,7 @@
 </p>
 
 <p>
-  <strong>Golfer 1:</strong>
-  <%= @match.golfer.name %>
-</p>
-
-<p>
-  <strong>Golfer 2:</strong>
-  <%= @match.golfer.name %>
+<strong><%= @match.golfer1_name %> </strong> vs. <strong><%= @match.golfer2_name %> -- (hcap here) <!-- want to add discreet handicap per golfer here %= @match.golfer2_name.handicap % --></strong> 
 </p>
 
 <p>
@@ -29,7 +23,47 @@
   <strong>Winner:</strong>
   <%= @match.winner %>
 </p>
+<strong>Match Result:</strong>
+<table border="1"><tr><td>Hole #</td><% @match.course.holes.each do |c| %>
+<td><strong><%= c.hole_number %><% end %></strong></td></tr><br>
+<tr><td >Par</td><% @match.course.holes.each do |c| %>
+<td><%= c.par %><% end %></td></tr><br>
+<tr><td>Handicap</td><% @match.course.holes.each do |c| %>
+<td><%= c.handicap %><% end %></td></tr><br>
+<tr><td>Yardage</td><% @match.course.holes.each do |c| %>
+<td><%= c.yardage %><% end %></td></tr><br>
+<tr><td><%= @match.golfer1_name %> </td>
+<% @match.course.holes.count.times do |l| %>
+<td><select name="hole_score" id="" class="form-control" style="width: 40px;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+	    <option value="10">10</option>
+            <option value="max">M</option>
+</select></td><% end %></tr>
 
-
+<tr><td><%= @match.golfer2_name %></td>
+<% @match.course.holes.count.times do |l| %>
+<td><select name="hole_score" id="" class="form-control" style="width: 40;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+	    <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+	    <option value="10">10</option>
+            <option value="max">M</option>
+</select></td><% end %></tr>
+</table>
+<p />
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>

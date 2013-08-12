@@ -16,17 +16,17 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label 'Golfer 1' %><br>
-   <%= collection_select(:match, :golfer_id, Golfer.all, :id, :name) %>  
-</div>
+    <%= f.label :golfer_1 %><br>
+   <%= collection_select(:match, :golfer1_name, Golfer.all, :name, :name) %>  
+  </div>
   <div class="field">
-    <%= f.label 'Golfer 2' %><br>
-   <%= collection_select(:match, :golfer, Golfer.all, :id, :name) %>  
-</div>
+    <%= f.label :golfer_2 %><br>
+   <%= collection_select(:match, :golfer2_name, Golfer.all, :name, :name) %>  
+  </div>
   <div class="field">
     <%= f.label 'Course' %><br>
    <%= collection_select(:match, :course_id, Course.all, :id, :name) %>   
-</div>
+  </div>
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>

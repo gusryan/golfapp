@@ -30,13 +30,12 @@
 </p>
 <!-- Hole Listing -->
 <h3>Holes</h3>
-<table><tr><td>#</td><td>Par</td><td>Hcap</td><td>Yard</td></tr></table>
+<table border ="1"><tr><td>#</td><td>Par</td><td>Hcap</td><td>Yard</td></tr>
 <% @course.holes.each do |c| %>
-<table border="1"><tr><td><%= c.hole_number %></td>
+<tr><td><%= c.hole_number %></td>
 <td><%= c.par %></td><td><%= c.handicap %></td><td><%= c.yardage %></tr>
-
-</table>
 <% end %>
+</table>
 
 
 <!-- New hole form -->
