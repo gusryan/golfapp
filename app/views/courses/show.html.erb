@@ -1,7 +1,26 @@
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Match Play Calc v1.0</title>
+<link rel="stylesheet" href="../layouts/bootstrap.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../layouts/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<p />
+<ul class="nav nav-tabs">
+<li class="active"><a href="../courses">Courses</a></li>
+<li><a href="../golfers">Golfers</a></li>
+<li><a href="../matches">Matches</a></li>
+</ul>
+
+<section>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2> <%= @course.name %></h2>
+  <h3> <%= @course.name %></h3>
 </p>
 
 <p>
@@ -29,14 +48,25 @@
   <%= @course.rating %>
 </p>
 <!-- Hole Listing -->
-<h3>Holes</h3>
-<table border ="1"><tr><td>#</td><td>Par</td><td>Hcap</td><td>Yard</td></tr>
-<% @course.holes.each do |c| %>
-<tr><td><%= c.hole_number %></td>
-<td><%= c.par %></td><td><%= c.handicap %></td><td><%= c.yardage %></tr>
-<% end %>
-</table>
 
+<table border="1">
+
+<tr><td>Hole #</td><% @course.holes.each do |c| %>
+<td><strong><%= c.hole_number %><% end %></strong></td>
+</tr><br>
+
+<tr><td >Par</td><% @course.holes.each do |c| %>
+<td><%= c.par %><% end %></td>
+</tr><br>
+
+<tr><td>Handicap</td><% @course.holes.each do |c| %>
+<td><%= c.handicap %><% end %></td>
+</tr><br>
+
+<tr><td>Yardage</td><% @course.holes.each do |c| %>
+<td><%= c.yardage %><% end %></td>
+</tr><br>
+</table>
 
 <!-- New hole form -->
 <h3>Add a hole:</h3>
@@ -66,3 +96,5 @@
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+</body>
+</html>

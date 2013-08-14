@@ -1,6 +1,26 @@
-<h1>Listing matches</h1>
+<html lang="en">
 
-<table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Match Play Calc v1.0</title>
+<link rel="stylesheet" href="..css/bootstrap.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<p />
+<ul class="nav nav-tabs">
+<li><a href="../courses">Courses</a></li>
+<li><a href="../golfers">Golfers</a></li>
+<li class="active"><a href="../matches">Matches</a></li>
+</ul>
+
+<section>
+
+<h3>Matches</h3>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,20 +35,20 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.name %></td>
+        <td><%= link_to match.name, match %></td>
         <td><%= match.golfer1_name %></td>
         <td><%= match.golfer2_name %></td>
         <td><%= match.course.name %></td>
         <td><%= match.score %></td>
         <td><%= match.winner %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_match_path(match) %>
+        | <%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Match', new_match_path %>
+<%= link_to 'New Match', new_match_path, :class => 'btn btn-info btn-small' %>
+<p />
+</body>
+</html>

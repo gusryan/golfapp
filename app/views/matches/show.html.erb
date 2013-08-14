@@ -1,3 +1,22 @@
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Match Play Calc v1.0</title>
+<link rel="stylesheet" href="..css/bootstrap.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<p />
+<ul class="nav nav-tabs">
+<li><a href="../courses">Courses</a></li>
+<li><a href="../golfers">Golfers</a></li>
+<li class="active"><a href="../matches">Matches</a></li>
+</ul>
+
+<section>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -24,14 +43,24 @@
   <%= @match.winner %>
 </p>
 <strong>Match Result:</strong>
-<table border="1"><tr><td>Hole #</td><% @match.course.holes.each do |c| %>
-<td><strong><%= c.hole_number %><% end %></strong></td></tr><br>
+<table border="1">
+
+<tr><td>Hole #</td><% @match.course.holes.each do |c| %>
+<td><strong><%= c.hole_number %><% end %></strong></td>
+</tr><br>
+
 <tr><td >Par</td><% @match.course.holes.each do |c| %>
-<td><%= c.par %><% end %></td></tr><br>
+<td><%= c.par %><% end %></td>
+</tr><br>
+
 <tr><td>Handicap</td><% @match.course.holes.each do |c| %>
-<td><%= c.handicap %><% end %></td></tr><br>
+<td><%= c.handicap %><% end %></td>
+</tr><br>
+
 <tr><td>Yardage</td><% @match.course.holes.each do |c| %>
-<td><%= c.yardage %><% end %></td></tr><br>
+<td><%= c.yardage %><% end %></td>
+</tr><br>
+
 <tr><td><%= @match.golfer1_name %> </td>
 <% @match.course.holes.count.times do |l| %>
 <td><select name="hole_score" id="" class="form-control" style="width: 40px;">
@@ -46,11 +75,12 @@
             <option value="9">9</option>
 	    <option value="10">10</option>
             <option value="max">M</option>
-</select></td><% end %></tr>
+</select></td><% end %>
+</tr>
 
 <tr><td><%= @match.golfer2_name %></td>
 <% @match.course.holes.count.times do |l| %>
-<td><select name="hole_score" id="" class="form-control" style="width: 40;">
+<td><select name="hole_score" id="" class="form-control" style="width: 40px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -62,8 +92,14 @@
             <option value="9">9</option>
 	    <option value="10">10</option>
             <option value="max">M</option>
-</select></td><% end %></tr>
+</select></td><% end %>
+</tr>
 </table>
+
 <p />
-<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Next', edit_match_path(@match), :class => 'btn btn-success btn-small' %> |
 <%= link_to 'Back', matches_path %>
+</section>
+<footer></footer>
+</body>
+</html>

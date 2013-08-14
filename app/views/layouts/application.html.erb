@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Scorematch</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", "bootstrap", "bootstrap-responsive", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body width="100%">
 
+<div class="container">
+<div class="page-header"><h2>Match Play Calculator</h2></div>
 <%= yield %>
 
+</div>
 </body>
 </html>

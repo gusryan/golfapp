@@ -1,6 +1,26 @@
-<h1>Course Listing</h1>
+<html lang="en">
 
-<table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Match Play Calc v1.0</title>
+<link rel="stylesheet" href="..css/bootstrap.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<p />
+<ul class="nav nav-tabs">
+<li class="active"><a href="../courses">Courses</a></li>
+<li><a href="../golfers">Golfers</a></li>
+<li><a href="../matches">Matches</a></li>
+</ul>
+
+<section>
+
+<h3>Courses</h3>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -10,28 +30,27 @@
       <th>Slope</th>
       <th>Rating</th>
       <th>Holes</th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.name %></td>
+        <td><%= link_to course.name, course %></td>
         <td><%= course.par %></td>
         <td><%= course.location %></td>
         <td><%= course.tees %></td>
         <td><%= course.slope %></td>
         <td><%= course.rating %></td>
 	<td><%= course.holes.count %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-	<td><%= link_to 'Destroy', course, method: :delete, date: {confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %>
+	| <%= link_to 'Destroy', course, method: :delete, date: {confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'Add Course', new_course_path, :class => 'btn btn-info btn-small' %>
+<p />
+</body>
+</html>
